@@ -1,0 +1,17 @@
+:export {
+  colorMain: var(--primary);
+}
+
+.navbar .navbar_collapse .navbar_collapse_nav .navbar_collapse_nav_nav_link {
+  font-size: 18px;
+  font-weight: 500;
+}
+@media (max-width: mobile-width-1px) {
+  .navbar .navbar_collapse .navbar_collapse_nav .navbar_collapse_nav_nav_link {
+    color: red;
+  }
+}
+.navbar .navbar_collapse .navbar_collapse_nav .navbar_collapse_nav_dropdown_menu .navbar_collapse_nav_dropdown_item {
+  font-size: 18px;
+  font-weight: 500;
+}/*# sourceMappingURL=Navbar.module.css.map */

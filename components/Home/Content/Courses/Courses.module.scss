@@ -1,0 +1,63 @@
+:export {
+    colorMain: var(--primary);
+}
+
+$mobile-width: 480px;
+$desktop-width: 1200px;
+$desktop2-width: 992px;
+$desktop3-width: 769px;
+
+@mixin mobile1 {
+    @media (max-width: #{$desktop3-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile2 {
+    @media (max-width: #{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet2 {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$desktop2-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet3 {
+    @media (max-width: #{$desktop3-width - 1px}) {
+        @content;
+    }
+}
+
+.container_Courses {
+    .content_container {
+        .btn_design {
+            .btn_hover {
+                transition: background-color 0.5s ease, color 1s ease;
+                &:hover {
+                    background-color: white !important;
+                    color: #F67A20 !important;
+                }                
+            }
+        }
+        .detail_content {
+            .detail_course {
+                .btn_hover {
+                    transition: background-color 0.5s ease, color 1s ease;
+                    &:hover {
+                        background-color: white !important;
+                        color: #F67A20 !important;
+                    }                
+                }   
+            }
+        }
+    }
+}

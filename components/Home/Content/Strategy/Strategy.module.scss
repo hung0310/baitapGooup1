@@ -1,0 +1,90 @@
+:export {
+    colorMain: var(--primary);
+}
+
+$mobile-width: 480px;
+$desktop-width: 1200px;
+$desktop2-width: 992px;
+$desktop3-width: 769px;
+
+@mixin mobile1 {
+    @media (max-width: #{$desktop2-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile2 {
+    @media (max-width: #{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet2 {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$desktop2-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet3 {
+    @media (max-width: #{$desktop3-width - 1px}) {
+        @content;
+    }
+}
+
+.container_strategy {
+    .content_strategy {
+        .detail_content {
+            .row_one {
+                .content_row_one {
+                    .head_content {
+                        @include mobile1 {
+                            text-align: center;
+                            margin-bottom: 0px !important;
+                        }
+                    }
+
+                    .title_content_row_one {
+                        @include mobile1 {
+                            text-align: center;
+                            margin-bottom: 20px !important;
+                        }
+                    }
+
+                    .detail_para_content {
+                        .para_content {
+                            @include mobile1 {
+                                text-align: center;
+                            }
+                        }
+                    }
+
+                    .btn_row_one {
+                        @include mobile1 {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+
+                }
+            }
+
+            .row_two {
+                @include mobile1 {
+                    margin-top: 50px;
+                    padding-left: 60px !important;
+                }
+                @include mobile2 {
+                    margin-top: 50px;
+                    padding-left: 0px !important;
+                }
+            }
+        }
+    }
+}

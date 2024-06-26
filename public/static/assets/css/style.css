@@ -1,0 +1,116 @@
+/* Zoom image */
+.zoom {
+    transition: transform 1s; 
+    margin: 0 auto;
+  }
+  
+.zoom:hover {
+    transform: scale(1.5);
+}
+
+.btn_hover_txt_or : hover {
+  background-color: white !important;
+  color: #F67A20 !important;
+}
+
+/* hover link */
+.active {
+  -webkit-text-fill-color: #F67A20 !important;
+}
+
+.effect_link {
+  background-image: linear-gradient(
+    to right,
+    #F67A20,
+    #F67A20 50%,
+    #000 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.effect_link:before{
+  content: '';
+  background: #F67A20;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.effect_link:hover {
+ background-position: 0;
+}
+
+.effect_link:hover::before{
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* btn_hover */
+
+.btn_hover_or {
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.btn_hover_or:hover {
+  background-color: white !important;
+  -webkit-text-fill-color: #F67A20 !important;
+}
+
+.btn_hover_w {
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.btn_hover_w:hover {
+  background-color: #F67A20 !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.btn_hover_ft {
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.btn_hover_ft:hover {
+  background-color: white !important;
+  -webkit-text-fill-color: black !important;
+}
+
+/* hover_icon_brand */
+
+.hover_icon_brand {
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.hover_icon_brand:hover {
+  color: #5EB9F0 !important;
+}
+
+/* color placeholder */
+.placeholder-color::placeholder {
+  color: #959CA9;
+}
+
+/* zoom image  */
+.hoverImageWrapper {
+  
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.hoverImage {
+  transition: transform 0.5s ease-in-out;
+}
+
+.hoverImageWrapper:hover .hoverImage {
+  transform: scale(1.2);
+}

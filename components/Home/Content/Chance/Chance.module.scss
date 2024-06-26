@@ -1,0 +1,63 @@
+:export {
+    colorMain: var(--primary);
+}
+
+$mobile-width: 480px;
+$desktop-width: 1200px;
+$desktop2-width: 992px;
+$desktop3-width: 769px;
+
+@mixin mobile1 {
+    @media (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile2 {
+    @media (max-width: #{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet2 {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$desktop2-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet3 {
+    @media (max-width: #{$desktop3-width - 1px}) {
+        @content;
+    }
+}
+
+.container_Chance {
+    .container_content {
+        .content_row {
+            .detail_content_row {
+                .content_h_row {
+                    @include mobile1 {
+                        text-align: center;
+                    }
+                    @include mobile2 {
+                        text-align: center;
+                    }
+                }
+                .content_p_row {
+                    @include mobile1 {
+                        text-align: center;
+                    }
+                    @include mobile2 {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

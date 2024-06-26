@@ -1,0 +1,111 @@
+:export {
+    colorMain: var(--primary);
+}
+
+$mobile-width: 480px;
+$desktop-width: 1200px;
+$desktop2-width: 992px;
+$desktop3-width: 769px;
+
+@mixin mobile1 {
+    @media (max-width: #{$desktop2-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile2 {
+    @media (max-width: #{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet2 {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$desktop2-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet3 {
+    @media (max-width: #{$desktop3-width - 1px}) {
+        @content;
+    }
+}
+
+.container_Blog {
+    .content_container {
+        .detail_content {
+            .detail_content_col {
+                @include mobile1 {
+                    .title_content {
+                        text-align: center;
+                    }
+                    .para_content {
+                        text-align: center;
+                    }
+                }
+                @include mobile2 {
+                    .title_content {
+                        text-align: center;
+                    }
+                    .para_content {
+                        text-align: center;
+                    }
+                }
+            }
+
+            .content_col_img1 {
+                .detail_content_col_img1{
+                    @include mobile1 {
+                        margin-top: 50px !important;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    @include mobile2 {
+                        margin-top: 50px !important;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+
+            .content_col_img2 {
+                .detail_content_col_img2{
+                    @include mobile1 {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    @include mobile2 {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+
+            .content_col_img {
+                .detail_content_col_img{
+                    @include mobile1 {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    @include mobile2 {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,83 @@
+:export {
+    colorMain: var(--primary);
+}
+
+$mobile-width: 480px;
+$desktop-width: 1200px;
+$desktop2-width: 992px;
+$desktop3-width: 769px;
+
+@mixin mobile1 {
+    @media (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile2 {
+    @media (max-width: #{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet2 {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$desktop2-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet3 {
+    @media (max-width: #{$desktop3-width - 1px}) {
+        @content;
+    }
+}
+
+.container_RoadMap {
+    .content_RoadMap {
+        .detail_RoadMap {
+            @include mobile1 {
+                display: flex;
+                flex-direction: column;
+            }
+            @include mobile2 {
+                display: flex;
+                flex-direction: column;
+            }
+            .title_detail {
+                text-align: center;
+            }
+        }
+        .detail_content_RoadMap {
+            .detail_content {
+                .detail_content_div {
+                    @include mobile1 {
+                        margin-left: 0px !important;
+                    }
+                    @include mobile2 {
+                        margin-left: 0px !important;
+                    }
+                }
+            }
+
+        }
+    }
+    .link_RoadMap {
+        .content_link {
+            .detail_content_link {
+                .detail_link {
+                    .link_design {
+                        &:hover::before{
+                            width: 40% !important;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

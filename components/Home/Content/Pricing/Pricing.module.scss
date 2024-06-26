@@ -1,0 +1,82 @@
+:export {
+    colorMain: var(--primary);
+}
+
+$mobile-width: 480px;
+$desktop-width: 1200px;
+$desktop2-width: 992px;
+$desktop3-width: 769px;
+
+@mixin mobile1 {
+    @media (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile2 {
+    @media (max-width: #{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet2 {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$desktop2-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet3 {
+    @media (max-width: #{$desktop3-width - 1px}) {
+        @content;
+    }
+}
+
+.conatainer_Pricing {
+    .content_container {
+        .detail_content {
+            .content_col {
+                .detail_col {
+                    .title_col {
+                        .para_col {
+                            @include mobile1 {
+                                text-align: center;
+                            }
+                            @include mobile2 {
+                                text-align: center;
+                            }
+                        }
+                    }
+
+                    .body_col {
+                        .title_body {
+                            @include mobile1 {
+                                text-align: center;
+                            }
+                            @include mobile2 {
+                                text-align: center;
+                            }   
+                        } 
+                        .content_body {     
+                            @include mobile1 {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                            @include mobile2 {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }                     
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
